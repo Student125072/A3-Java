@@ -11,4 +11,5 @@ public class Auto extends Vervoermiddel {
     public int getGewicht() { return gewicht; }
     public void setGewicht(int gewicht) { this.gewicht = gewicht; }
 
+
 }
