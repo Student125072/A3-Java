@@ -30,8 +30,4 @@ public class Persoon {
         this.geboortedatum = geboortedatum;
     }
 
-    public int aantalDagen(){
-
-    }
-
 }

@@ -13,7 +13,6 @@ public class Main {
         System.out.println(persoon.getVoornaam());
         System.out.println(persoon.getAchternaam());
         System.out.println(persoon.getGeboortedatum());
-        System.out.println("Deze persoon is" + aantalDagen() + "dagen oud.");
     }
 
 }
