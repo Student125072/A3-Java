@@ -8,11 +8,12 @@ public class Main {
         //aanroepen van de setters
         persoon.setVoornaam("Kevin");
         persoon.setAchternaam("Koster");
-        persoon.setGeboortedatum("07-10-2001");
+        persoon.setGeboortedatum("2001-10-07");
 
         System.out.println(persoon.getVoornaam());
         System.out.println(persoon.getAchternaam());
         System.out.println(persoon.getGeboortedatum());
+        System.out.println("De persoon is " + persoon.ageDays(persoon.getGeboortedatum()) + " dagen oud.");
     }
 
 }

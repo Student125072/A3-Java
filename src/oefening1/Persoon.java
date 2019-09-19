@@ -1,5 +1,8 @@
 package oefening1;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class Persoon {
 
     public String voornaam;
@@ -28,6 +31,13 @@ public class Persoon {
 
     public void setGeboortedatum(String geboortedatum) {
         this.geboortedatum = geboortedatum;
+    }
+
+    public long ageDays(String geboortedatum) {
+        LocalDate now = LocalDate.now();
+        LocalDate dob = LocalDate.parse(geboortedatum);
+        long daysbetween = ChronoUnit.DAYS.between(dob, now);
+        return daysbetween;
     }
 
 }
