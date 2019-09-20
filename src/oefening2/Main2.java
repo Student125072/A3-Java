@@ -10,9 +10,9 @@ public class Main2 {
         auto.setType("S350d");
         auto.setKleur("selenitgrau metallic");
         auto.setBrandstof("Diesel");
+        auto.setGewicht(550);
 
         //setters van de auto-class
-        auto.bepaalBelasting(550);
         System.out.println("De wegenbelasting bedraagt: " + auto.getBelasting() + " euro per kwartaal.");
     }
 
