@@ -9,10 +9,10 @@ public class Main2 {
         auto.setMerk("Mercedes");
         auto.setType("S350d");
         auto.setKleur("selenitgrau metallic");
+        auto.setBrandstof("Diesel");
 
         //setters van de auto-class
-        auto.setGewicht(1875);
-        auto.setBelasting(570.00);
+        auto.setGewicht(550);
         System.out.println("De wegenbelasting bedraagt: " + auto.getBelasting() + " euro per maand.");
     }
 
