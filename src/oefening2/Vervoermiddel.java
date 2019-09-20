@@ -9,7 +9,7 @@ public class Vervoermiddel {
     public void setMerk(String merk) { this.merk = merk; }
 
     public String getType() { return type; }
-    public void setType(String type) { this.type = merk; }
+    public void setType(String type) { this.type = type; }
 
     public String getKleur() { return kleur; }
     public void setKleur(String kleur) { this.kleur = kleur; }

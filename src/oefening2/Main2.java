@@ -13,7 +13,12 @@ public class Main2 {
 
         //setters van de auto-class
         auto.bepaalBelasting(550);
+        System.out.println("Merk: " + auto.getMerk());
+        System.out.println("Type: " + auto.getType());
+        System.out.println("Kleur: " + auto.getKleur());
+        System.out.println("Brandstoftype: " + auto.getBrandstof());
         System.out.println("De wegenbelasting bedraagt: " + auto.getBelasting() + " euro per kwartaal.");
+        System.out.println("Wegenbelasting per jaar: " + auto.getBelasting()*4);
     }
 
 }
