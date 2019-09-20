@@ -12,8 +12,8 @@ public class Main2 {
         auto.setBrandstof("Diesel");
 
         //setters van de auto-class
-        auto.setGewicht(550);
-        System.out.println("De wegenbelasting bedraagt: " + auto.getBelasting() + " euro per maand.");
+        auto.bepaalBelasting(550);
+        System.out.println("De wegenbelasting bedraagt: " + auto.getBelasting() + " euro per kwartaal.");
     }
 
 }
