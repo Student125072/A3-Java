@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -31,7 +32,7 @@ public class PersoonList extends JFrame{
 		JButton subBtn = new JButton("Toevoegen");							// de button om toe te voegen
 		JButton delBtn = new JButton("Reset");								// de button om te resetten
 		DefaultListModel<String> model = new DefaultListModel<>();
-		JList<String> jPersoon = new JList<>(model);
+		JList<String> persoonList = new JList<>(model);
 		
 		//labels
 		JLabel laVoornaam = new JLabel();
@@ -48,6 +49,7 @@ public class PersoonList extends JFrame{
 		subBtn.setBounds(10, 100, 100, 30);
 		delBtn.setBounds(130, 100, 100, 30);
 		output.setBounds(10, 150, 400, 20);
+		persoonList.setBounds(10, 250, 460, 500);
 		
 		//tooltips
 		voornaam.setToolTipText("Voer hier je voornaam in.");
@@ -62,7 +64,7 @@ public class PersoonList extends JFrame{
 		add(output);
 		add(subBtn);
 		add(delBtn);
-		add(jPersoon);
+		add(persoonList);
 
 		
 		subBtn.addActionListener( new ActionListener() {
@@ -77,8 +79,7 @@ public class PersoonList extends JFrame{
 				} else {
 					output.setText(message);
 					output.setForeground(Color.BLUE);
-					model.addElement(voornaam.getText());
-					model.addElement(achternaam.getText());
+					model.addElement(voornaam.getText() + " " + achternaam.getText());
 					voornaam.setText("");
 					achternaam.setText("");
 				}
