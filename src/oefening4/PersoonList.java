@@ -17,7 +17,7 @@ public class PersoonList extends JFrame{
 	public PersoonList() {
 		
 		//het setten van de windownaam.
-		super("Invoeren van personen");
+		super("Eclipse-Personen");
 		
 		//properties van de window.
 		setSize(500,500);
@@ -48,7 +48,6 @@ public class PersoonList extends JFrame{
 		subBtn.setBounds(10, 100, 100, 30);
 		delBtn.setBounds(130, 100, 100, 30);
 		output.setBounds(10, 150, 400, 20);
-		output.setForeground(Color.RED);
 		
 		//tooltips
 		voornaam.setToolTipText("Voer hier je voornaam in.");
@@ -74,11 +73,14 @@ public class PersoonList extends JFrame{
 				
 				if (voornaam.getText().equals("") || achternaam.getText().equals("")) {
 					output.setText(error);
+					output.setForeground(Color.RED);
 				} else {
 					output.setText(message);
 					output.setForeground(Color.BLUE);
 					model.addElement(voornaam.getText());
 					model.addElement(achternaam.getText());
+					voornaam.setText("");
+					achternaam.setText("");
 				}
 			}
 			
@@ -91,6 +93,8 @@ public class PersoonList extends JFrame{
 				
 				output.setText(clearMsg);
 				output.setForeground(Color.BLUE);
+				voornaam.setText("");
+				achternaam.setText("");
 				model.clear();
 				
 			}
