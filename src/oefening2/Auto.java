@@ -2,7 +2,6 @@ package oefening2;
 
 public class Auto extends Vervoermiddel {
 
- //   private double belasting;
     private String brandstof;
     private int gewicht;
 

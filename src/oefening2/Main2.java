@@ -3,7 +3,7 @@ package oefening2;
 public class Main2 {
 
     public static void main(String[] args) {
-        Auto auto = new Auto();
+        Auto auto = new Auto(); 
 
         //setters die overgenomen zijn van de vervoermiddel-class
         auto.setMerk("Mercedes");
