@@ -1,5 +1,7 @@
 package eindopdracht1;
 
+import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -7,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 @SuppressWarnings("serial")
@@ -49,6 +52,64 @@ public class Board extends JFrame{
 			}
 		});
 		
+		t.setRepeats(false);
+		
+		//de board setup
+		Container pane = getContentPane();
+		pane.setLayout(new GridLayout(4,4));
+		for (Card c : cards) {
+			pane.add(c);
+		}
+		setTitle("Memory Game");
 	}
+	
+	
+	//de turn handler van de kaarten
+		public void doTurn() {
+			if (card1 == null && card2 == null) {
+				card1 = selectedCard;
+				card1.setText(String.valueOf(card1.getId()));
+			}
+			
+			if (card1 != null && card2 != null) {
+				card2 = selectedCard;
+				card2.setText(String.valueOf(card2.getId()));
+				t.start();
+			}
+		}
+		
+		
+		public void checkCards() {
+			if (card1.getId() == card2.getId()) {
+				card1.setEnabled(false);
+				card2.setEnabled(false);
+				card1.setMatched(true);
+				card2.setMatched(true);
+				if (this.isGameWon()) {
+					JOptionPane.showMessageDialog(this, "You win!");
+					System.exit(0);
+				}
+			}
+			
+			else {
+				//laat de kaarten verdwijnen
+				card1.setText("");
+				card2.setText("");
+			}
+			//reset de kaarten
+			card1 = null;
+			card2 = null;
+		}
+		
+		public boolean isGameWon() {
+			for (Card c : this.cards) {
+				if (c.getMatched() == false) {
+					return false;
+				}
+			}
+			return true;
+		}
+		
+	
 	
 }
