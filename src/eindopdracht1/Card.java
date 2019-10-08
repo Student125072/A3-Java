@@ -1,4 +1,4 @@
-package eindopdracht1;
+ package eindopdracht1;
 
 import javax.swing.JButton;
 

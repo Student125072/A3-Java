@@ -60,7 +60,7 @@ public class Board extends JFrame{
 		for (Card c : cards) {
 			pane.add(c);
 		}
-		setTitle("Memory Game");
+		setTitle("Memory Game - Eindopdracht 1");
 	}
 	
 	
