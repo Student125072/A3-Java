@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Collections;
 
 @SuppressWarnings("serial")
-public class Board extends JFrame {
+class Board extends JFrame {
 
 
     private List<Card> cards;
@@ -20,36 +20,27 @@ public class Board extends JFrame {
     private Card card2;
     private Timer tim;
 
-    Image backCard;
-    Image revealCard1;
-    Image revealCard2;
-    ImageIcon icon;
-    ImageIcon icon1;
-    ImageIcon icon2;
-
-    public Image revealCard1() {
+    private void revealCard1() {
         try {
-            revealCard1 = ImageIO.read(getClass().getResource("../resources/card" + card1.getId() + ".jpg"));
-            icon1 = new ImageIcon(revealCard1);
+            Image revealCard1 = ImageIO.read(getClass().getResource("resources/card" + card1.getId() + ".jpg"));
+            ImageIcon icon1 = new ImageIcon(revealCard1);
             card1.setIcon(icon1);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return revealCard1;
     }
 
-    public Image revealCard2() {
+    private void revealCard2() {
         try {
-            revealCard2 = ImageIO.read(getClass().getResource("../resources/card" + card2.getId() + ".jpg"));
-            icon2 = new ImageIcon(revealCard2);
+            Image revealCard2 = ImageIO.read(getClass().getResource("resources/card" + card2.getId() + ".jpg"));
+            ImageIcon icon2 = new ImageIcon(revealCard2);
             card2.setIcon(icon2);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return revealCard2;
     }
 
-    public Board() {
+    Board() {
 
         int pairs = 9;
         List<Card> cardsList = new ArrayList<Card>();
@@ -92,7 +83,7 @@ public class Board extends JFrame {
         setTitle("Memory Match");
     }
 
-    public void doTurn() {
+    private void doTurn() {
         if (card1 == null && card2 == null) {
             card1 = selectedCard;
             card1.setText(String.valueOf(card1.getId()));
@@ -107,12 +98,12 @@ public class Board extends JFrame {
         }
     }
 
-    public void checkCards() {
+    private void checkCards() {
         if (card1.getId() == card2.getId()){//match condition
             card1.setEnabled(false); //disables the button
             card2.setEnabled(false);
-            card1.setMatched(true); //flags the button as having been matched
-            card2.setMatched(true);
+            card1.setMatched(); //flags the button as having been matched
+            card2.setMatched();
             if (this.isGameWon()) {
                 JOptionPane.showMessageDialog(this, "U heeft gewonnen!");
                 System.exit(0);
@@ -129,9 +120,9 @@ public class Board extends JFrame {
         card2 = null;
     }
 
-    public boolean isGameWon() {
+    private boolean isGameWon() {
         for(Card c: this.cards) {
-            if (c.getMatched() == false) {
+            if (!c.getMatched()) {
                 return false;
             }
         }

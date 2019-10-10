@@ -3,24 +3,24 @@
  import javax.swing.*;
 
  @SuppressWarnings("serial")
- public class Card extends JButton {
+ class Card extends JButton {
 
      private int id;
      private boolean matched = false;
 
-     public void setId(int id) {
+     void setId(int id) {
          this.id = id;
      }
 
-     public int getId() {
+     int getId() {
          return this.id;
      }
 
-     public void setMatched(boolean matched) {
-         this.matched = matched;
+     void setMatched() {
+         this.matched = true;
      }
 
-     public boolean getMatched() {
+     boolean getMatched() {
          return this.matched;
      }
 
