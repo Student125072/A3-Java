@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-public class PersoonLijst extends JFrame{
+public class Persoonlijst extends JFrame{
 	
 	public static DefaultListModel<String> listModel;
 	
@@ -71,5 +71,4 @@ public class PersoonLijst extends JFrame{
 	}
 		
 	}
-	
-}
+

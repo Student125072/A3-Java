@@ -6,7 +6,7 @@ public class ConnectDB {
 
 	public Connection con;
 	
-	public void createConnection(String databasename, String username, String passwoord) {
+	public void createConnection(String databasename, String username, String password) {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -31,7 +31,7 @@ public class ConnectDB {
 				String query = "select * from namen";
 				ResultSet results = statement.executeQuery(query);
 				while(results.next()) {
-					PersoonLijst.listModel.addElement(results.getString(2) + " " + results.getString(3));
+					Persoonlijst.listModel.addElement(results.getString(2) + " " + results.getString(3));
 				}
 			}
 			
