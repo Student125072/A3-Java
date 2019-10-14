@@ -10,7 +10,7 @@ public class ConnectDB {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + databasename + username + password);
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/persoonlijst?user=root&password=" + password);
 			try {
 				if(!con.isClosed()) {
 					System.out.println("Connection succesful.");
@@ -28,10 +28,10 @@ public class ConnectDB {
 		try {
 			if(!con.isClosed()) {
 				Statement statement = con.createStatement();
-				String query = "select * from namen";
+				String query = "select * from persoonlijst";
 				ResultSet results = statement.executeQuery(query);
 				while(results.next()) {
-					Persoonlijst.listModel.addElement(results.getString(2) + " " + results.getString(3));
+					Persoonlijst.listModel.addElement(results.getString(1) + " " + results.getString(2));
 				}
 			}
 			
