@@ -28,11 +28,11 @@ public class Persoonlijst extends JFrame{
 		f.add(panel);
 		
 		JTextField voornaam = new JTextField(20);
-		voornaam.setBounds(0,0,200,30);
+		voornaam.setBounds(20,30,200,30);
 		panel.add(voornaam);
 		
 		JTextField achternaam = new JTextField(20);
-		achternaam.setBounds(335,0,200,30);
+		achternaam.setBounds(315,30,200,30);
 		panel.add(achternaam);
 		
 		listModel = new DefaultListModel<>();
@@ -54,7 +54,7 @@ public class Persoonlijst extends JFrame{
 			}
 		});
 		panel.add(toevoeg);
-		JButton selectall = new JButton("Krijg alle personen");
+		JButton selectall = new JButton("Laat alle personen zien");
 		selectall.setBounds(150,300,200,50);
 		selectall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
